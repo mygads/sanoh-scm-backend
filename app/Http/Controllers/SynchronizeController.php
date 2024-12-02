@@ -107,7 +107,6 @@ class SynchronizeController
                     'po_origin' => $data->po_origin,
                     'po_revision_no' => $data->po_revision_no,
                     'po_revision_date' => $data->po_revision_date,
-                    'response' => $data->response,
                 ]
             );
         }
