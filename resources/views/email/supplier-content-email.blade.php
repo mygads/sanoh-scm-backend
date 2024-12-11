@@ -8,18 +8,27 @@ A new information has been sent to your SMS Portal. Please login to check the sa
 {{-- Content --}}
 <x-mail::panel>
 {{-- @dd($data) --}}
-    @if (isset($data) && count($data) > 0)
+    @if (isset($data1) && count($data1) > 0)
     <p>Purchase Order Open Today:</p>
-    @foreach ($data as $index => $po)
+    @foreach ($data1 as $index => $po)
         <p>{{ $index + 1 }}. {{ $po['po_no'] }}</p>
     @endforeach
     @else
     <p>No Purchase Order Open</p>
     @endif
+<br>
+    @if (isset($data2) && count($data2) > 0)
+    <p>Delivery Note Open Today:</p>
+    @foreach ($data2 as $index => $dn)
+        <p>{{ $index + 1 }}. {{ $dn['no_dn'] }}</p>
+    @endforeach
+    @else
+    <p>No Delivery Note Open</p>
+    @endif
 </x-mail::panel>
 
 <x-mail::button :url="$url">
-View Purchase Order
+    Go To Portal
 </x-mail::button>
 
 {{-- Footer --}}
